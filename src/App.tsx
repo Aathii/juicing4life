@@ -10,7 +10,7 @@ import {
   ShoppingBag,
   Sparkles,
 } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { useEffect, type ReactNode } from 'react'
 import Navbar from './components/Navbar'
 import FadeIn from './components/FadeIn'
 import AnimatedHeading from './components/AnimatedHeading'
@@ -151,6 +151,13 @@ function SectionHeader({
 }
 
 function HomePage() {
+  // The page renders after the browser has already looked for #menu or #visit,
+  // so links to those sections from the story page need the jump done here.
+  useEffect(() => {
+    const id = window.location.hash.slice(1)
+    if (id) document.getElementById(id)?.scrollIntoView()
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#fff8e7] text-[#263915]">
       <section id="home" className="relative min-h-screen overflow-hidden bg-[#f8e7b7]">
