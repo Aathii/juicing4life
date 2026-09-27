@@ -16,15 +16,15 @@ import FadeIn from './components/FadeIn'
 import AnimatedHeading from './components/AnimatedHeading'
 import Reveal from './components/Reveal'
 import WordReveal from './components/WordReveal'
+import { BASE, HOME_HREF, MENU_HREF, STORY_HREF, VISIT_HREF } from './paths'
 
 const PHONE = '647-673-2018'
 const PHONE_HREF = 'tel:+16476732018'
 const INSTAGRAM_URL = 'https://www.instagram.com/juicing4life_/'
 const MAPS_URL =
   'https://www.google.com/maps/search/?api=1&query=1921+Eglinton+Avenue+East+Toronto+ON+M1L+2L6'
-const VIDEO_URL =
-  '/1781194513269_AQPliBqHun1Kkexn2qAnDkkEL_x9vtAT6LmHLWcqR6xWyvI7FVh8shC.mp4'
-const LOGO_URL = '/juicing4life-logo.png'
+const VIDEO_URL = `${BASE}1781194513269_AQPliBqHun1Kkexn2qAnDkkEL_x9vtAT6LmHLWcqR6xWyvI7FVh8shC.mp4`
+const LOGO_URL = `${BASE}juicing4life-logo.png`
 
 const images = {
   cane:
@@ -352,7 +352,7 @@ function HomePage() {
                 Georgetown, Guyana.
               </p>
               <div className="mt-7">
-                <ButtonLink href="/story" variant="dark">
+                <ButtonLink href={STORY_HREF} variant="dark">
                   <BookOpen size={18} aria-hidden="true" />
                   Read the story
                 </ButtonLink>
@@ -378,7 +378,7 @@ function StoryPage() {
         <section className="px-5 pb-12 pt-14 md:px-12 md:pt-20 lg:px-16">
           <div className="mx-auto max-w-7xl">
             <a
-              href="/"
+              href={HOME_HREF}
               className="inline-flex items-center gap-2 text-sm font-bold text-[#6a8f28] transition-colors hover:text-[#3c541e]"
             >
               <ArrowLeft size={18} aria-hidden="true" />
@@ -460,7 +460,7 @@ function StoryPage() {
                 the homepage heavy.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <ButtonLink href="/#menu" variant="dark">
+                <ButtonLink href={MENU_HREF} variant="dark">
                   <ShoppingBag size={18} aria-hidden="true" />
                   View menu
                 </ButtonLink>
@@ -566,7 +566,7 @@ function SiteFooter() {
   return (
     <footer className="border-t border-[#ead8aa] bg-[#fff3cf] px-5 py-8 md:px-12 lg:px-16">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-[#6e644e] md:flex-row md:items-center md:justify-between">
-        <a href="/" className="flex items-center gap-3 font-semibold text-[#263915]">
+        <a href={HOME_HREF} className="flex items-center gap-3 font-semibold text-[#263915]">
           <img
             src={LOGO_URL}
             alt="Juicing4Life logo"
@@ -575,13 +575,13 @@ function SiteFooter() {
           Juicing4Life
         </a>
         <div className="flex flex-wrap gap-4">
-          <a href="/#menu" className="hover:text-[#263915]">
+          <a href={MENU_HREF} className="hover:text-[#263915]">
             Menu
           </a>
-          <a href="/story" className="hover:text-[#263915]">
+          <a href={STORY_HREF} className="hover:text-[#263915]">
             Story
           </a>
-          <a href="/#visit" className="hover:text-[#263915]">
+          <a href={VISIT_HREF} className="hover:text-[#263915]">
             Visit
           </a>
           <a href={PHONE_HREF} className="hover:text-[#263915]">
@@ -596,7 +596,7 @@ function SiteFooter() {
 export default function App() {
   const pathname = window.location.pathname.replace(/\/$/, '')
 
-  if (pathname === '/story') {
+  if (pathname === `${BASE}story`) {
     return <StoryPage />
   }
 

@@ -1,4 +1,5 @@
 import { Phone } from 'lucide-react'
+import { HOME_HREF, MENU_HREF, STORY_HREF, VISIT_HREF } from '../paths'
 
 interface NavbarProps {
   phoneHref: string
@@ -12,15 +13,15 @@ export default function Navbar({
   currentPage = 'home',
 }: NavbarProps) {
   const links = [
-    { label: 'Menu', href: '/#menu', active: false },
-    { label: 'Story', href: '/story', active: currentPage === 'story' },
-    { label: 'Visit', href: '/#visit', active: false },
+    { label: 'Menu', href: MENU_HREF, active: false },
+    { label: 'Story', href: STORY_HREF, active: currentPage === 'story' },
+    { label: 'Visit', href: VISIT_HREF, active: false },
   ]
 
   return (
     <div className="px-5 pt-5 md:px-12 lg:px-16">
       <nav className="nav-shell mx-auto flex max-w-7xl items-center justify-between rounded-lg px-3 py-3 md:px-4">
-        <a href="/" className="flex min-w-0 items-center gap-3">
+        <a href={HOME_HREF} className="flex min-w-0 items-center gap-3">
           <img
             src={logoUrl}
             alt="Juicing4Life logo"
