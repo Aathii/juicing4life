@@ -453,12 +453,6 @@ function StoryPage() {
               <h2 className="mt-3 max-w-3xl text-4xl font-semibold leading-tight text-[#263915] md:text-5xl">
                 <WordReveal text="A weekend stop that feels like being remembered." />
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-[#6e644e]">
-                The next version of the site should make the story easy to
-                feel: the booth, the family, the craft, and the reason people
-                come back. This page gives that narrative space without making
-                the homepage heavy.
-              </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <ButtonLink href={MENU_HREF} variant="dark">
                   <ShoppingBag size={18} aria-hidden="true" />
